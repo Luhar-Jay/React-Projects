@@ -1,0 +1,28 @@
+{
+  "name": "react-practice",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Jay Luhar",
+  "license": "ISC",
+  "description": "Basic react",
+  "repository": {
+    "type": "git",
+    "url": "React-Projects"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browesersList":[
+    "last 2 version"
+  ]
+}

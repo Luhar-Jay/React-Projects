@@ -1,0 +1,56 @@
+JSX => Babel trans piles it to React.createElement => ReactElement-JS Object => HTML Element (render).
+
+How to create element in the react => React.createElement => Object => HTML Element(render)
+
+React Component => Two types of component 
+		1> Class based component - OLD way
+		2> Functional component  - New way => React functional component is JS function 
+					cont HeadingComponent = () => {
+							return <h1> Hello World! </h1>
+						}
+
+JSX - is not HTML in JS
+JSX - HTML-like or XML-like syntax
+
+Props => Props is a Properties using passing the data Like as {const RestaurantCard = (props) =>{
+    return(
+        <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
+            <img 
+            className="res-logo"
+            alt="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/fedaee6f-c5e9-4f19-8188-93627e6d6776_70279.JPG" />
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>4.3 Stars</h4>
+            <h4>38 Minutes</h4>
+        </div>
+    )
+}}
+
+
+Two types of Export/Import files =>  
+	1>Default Export/Import
+		- export default component
+		- import component from your "path"
+
+	2> Named Export/Import
+		- export const component
+		- component from your "path"
+
+
+=> When ever the state React the rerender the component
+
+=> Whenever state variables update, react triggers a reconciliation cycle(re-renders the components)
+
+=> React Fiber is a complete rewrite of the React core algorithm, focusing on improving performance and responsiveness.
+
+=> React uses Virtual DOM, thereby creating web applications faster. Virtual DOM compares the components' previous states and updates only the items in the Real DOM that were changed, instead of updating all of the components again, as conventional web applications do.
+
+
+
+
+
+
+
+ => Questions 
+    1> Config-driven UI ?????
+    2> API call
