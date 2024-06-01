@@ -48,6 +48,27 @@ Two types of Export/Import files =>
 
 
 
+======== useEffect ==========
+
+=> If no dependancy array => useEffect is called on render every component 
+=> If dependancy array is empty = [] => useEffect is called initial render (jsut once)
+=> If dependancy array is [btnName] => called every time btnName updated
+
+
+======= Router ========
+
+=> router means it enable to creation on web app or mobile apps  to navigating without the refreshing the page.
+
+=> 2 types of routing 
+    1> Client side routing
+    2> Server side routing
+
+
+
+
+
+
+
 
 
 
