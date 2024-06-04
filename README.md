@@ -25,3 +25,14 @@
 - Slice (cart slice)
 - dispatch (action)
 - Selector
+
+# Setting up testing
+
+- Install React testing Library
+- Install Jest
+- Install Babel Depandancies
+- Configur Babel
+- Configur Parcel config file to disable default parcel transpilation
+- Jest configuration
+- Jest - (npx jest --init)
+- Install jsdom Library

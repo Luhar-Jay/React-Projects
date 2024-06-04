@@ -16,6 +16,7 @@ const Header = () => {
 
   // subscribing to the store using selector
   const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   useEffect(() => {
     // console.log("useEffect called");
@@ -40,7 +41,12 @@ const Header = () => {
           <li className="px-4">
             <Link to="grocery">Grocery</Link>
           </li>
-          <li className="px-4">Cart- {cartItems.length}</li>
+          <li className="px-4">
+            <Link to="cart">
+              <i class="fa fa-cart-shopping"></i>
+              <span className="font-bold "> - ({cartItems.length}items)</span>
+            </Link>
+          </li>
           <button
             className="Login"
             onClick={() => {

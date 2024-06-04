@@ -20,7 +20,7 @@ const RestaurantCard = (props) => {
       <h3 className="font-bold py-4 text-lg">{name}</h3>
       <h4 className="cuisines">{cuisines.join(", ")}</h4>
       <h4> {avgRating} </h4>
-      <h4>₹ {costForTwo} FOR TWO</h4>
+      <h4> {costForTwo} FOR TWO</h4>
       <h4> {sla?.slaString} </h4>
       <h4>User : {loggedInuser} </h4>
     </div>
