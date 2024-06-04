@@ -8,7 +8,7 @@ import Error from "./component/Error";
 import RestaurantMenu from "./component/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
-import appStore from "./utils/AppStore";
+import appStore from "./utils/appStore";
 
 // Chunking
 // lazy loading
