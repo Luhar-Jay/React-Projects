@@ -1,5 +1,14 @@
 # Basic react
 
+# Package installation
+
+- npm init
+- npm install -D parcel
+- npx parcel index.html (run application)
+- npm install react
+- npm install react-dom
+- package.json in remove the "main" :"App.js"
+
 # What is a Parcel?
 
 - The Parcel is bundler.
