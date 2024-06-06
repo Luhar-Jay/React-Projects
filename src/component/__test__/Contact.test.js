@@ -2,36 +2,53 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
-test("Should load contact us component", () => {
-  render(<Contact />);
+describe("Contact Us Page Test Case", () => {
+  // beforeAll(() => {
+  //   console.log("Before All");
+  // });
+  // beforeEach(() => {
+  //   console.log("Before Each");
+  // });
 
-  const heading = screen.getByRole("heading");
+  // afterAll(() => {
+  //   console.log("After All");
+  // });
 
-  expect(heading).toBeInTheDocument();
-});
+  // afterEach(() => {
+  //   console.log("After Each");
+  // });
 
-test("Should load button inside contact component", () => {
-  render(<Contact />);
+  test("Should load contact us component", () => {
+    render(<Contact />);
 
-  const button = screen.getByRole("button");
+    const heading = screen.getByRole("heading");
 
-  expect(button).toBeInTheDocument();
-});
+    expect(heading).toBeInTheDocument();
+  });
 
-test("Should load input inside contact component", () => {
-  render(<Contact />);
+  test("Should load button inside contact component", () => {
+    render(<Contact />);
 
-  const inputName = screen.getByPlaceholderText("name");
+    const button = screen.getByRole("button");
 
-  expect(inputName).toBeInTheDocument();
-});
+    expect(button).toBeInTheDocument();
+  });
 
-test("Should load two input boxes in thw Contact component", () => {
-  render(<Contact />);
+  test("Should load input inside contact component", () => {
+    render(<Contact />);
 
-  const inputBoxes = screen.getAllByRole("textbox");
+    const inputName = screen.getByPlaceholderText("name");
 
-  // console.log(inputBoxes.length);
+    expect(inputName).toBeInTheDocument();
+  });
 
-  expect(inputBoxes.length).toBe(2);
+  test("Should load two input boxes in thw Contact component", () => {
+    render(<Contact />);
+
+    const inputBoxes = screen.getAllByRole("textbox");
+
+    // console.log(inputBoxes.length);
+
+    expect(inputBoxes.length).toBe(2);
+  });
 });

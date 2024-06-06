@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for component/Contact.js</title>
+    <title>Code coverage report for component/RestaurantCategory.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">component</a> Contact.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">component</a> RestaurantCategory.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -89,10 +89,16 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -111,36 +117,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from "react";
+import ItemList from "./ItemList";
 &nbsp;
-const Contact = () =&gt; {
+const RestaurantCategory = ({ data, showItems, setShowIndex, dummy }) =&gt; {
+  const handleClick = () =&gt; {
+    setShowIndex();
+  };
+  // console.log(data);
   return (
-    &lt;div&gt;
-      &lt;h1&gt;Contact Us page&lt;/h1&gt;
-      &lt;form&gt;
-        &lt;input
-          type="text"
-          placeholder="name"
-          className="p-2 m-2 border border-black"
-        /&gt;
-        &lt;input
-          type="text"
-          placeholder="Massege"
-          className="p-2 m-2 border border-black"
-        /&gt;
-        &lt;button className="m-2 p-2 border border-black rounded-lg bg-slate-200 font-bold"&gt;
-          Submit
-        &lt;/button&gt;
-      &lt;/form&gt;
+    &lt;div className="w-6/12 m-auto bg-gray-50  p-4 my-4 shadow-lg rounded-md"&gt;
+      {/* Header */}
+      &lt;div
+        className="flex justify-between cursor-pointer"
+        onClick={handleClick}
+      &gt;
+        &lt;span className="font-bold text-lg"&gt;
+          {data.title} ({data.itemCards.length})
+        &lt;/span&gt;
+        &lt;span&gt;⬇️&lt;/span&gt;
+      &lt;/div&gt;
+      {/* Accordion */}
+      {showItems &amp;&amp; &lt;ItemList items={data.itemCards} dummy={dummy} /&gt;}
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default Contact;
+export default RestaurantCategory;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

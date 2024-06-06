@@ -43,8 +43,8 @@ const Header = () => {
           </li>
           <li className="px-4">
             <Link to="cart">
-              <i className="fa fa-cart-shopping"></i>
-              <span className="font-bold "> - ({cartItems.length}items)</span>
+              {/* <i className="fa fa-cart-shopping"></i> */}
+              Cart - ({cartItems.length}items)
             </Link>
           </li>
           <button
