@@ -1,16 +1,37 @@
-import { addItem } from "../utils/cartSlice";
+import { useState } from "react";
+import { addItem, removeItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const ItemList = ({ items, dummy }) => {
-  // console.log(dummy);
-  // console.log(items);
-
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const [itemQuantities, setItemQuantities] = useState({});
 
   const handleAddItem = (item) => {
-    dispatch(addItem(item));
+    if (addItem) {
+      dispatch(addItem(item));
+      confirm("Add one item");
+    }
+
+    setItemQuantities((prevQuantity) => ({
+      ...prevQuantity,
+      [item.card.info.id]: (prevQuantity[item.card.info.id] || 0) + 1,
+    }));
   };
+
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
+    setItemQuantities((prevQuantity) => ({
+      ...prevQuantity,
+      [item.card.info.id]: Math.max(0, prevQuantity[item.card.info.id] - 1),
+    }));
+    if (dispatch) {
+      confirm("Remove one item");
+    }
+  };
+
   return (
     <div>
       {items.map((item) => (
@@ -32,13 +53,33 @@ const ItemList = ({ items, dummy }) => {
             <p className="text-xs">{item.card.info.description}</p>
           </div>
           <div className="w-3/12 p-4">
-            <div className="absolute">
-              <button
-                className="px-2 py-1 rounded-lg mx-12 bg-black text-white "
-                onClick={() => handleAddItem(item)}
-              >
-                Add +
-              </button>
+            <div className="absolute bg-black">
+              {cartItems.includes(item) ? (
+                <div className="flex mx-4">
+                  <button
+                    className="px-2 py-1 rounded-lg mx-1 bg-black text-white "
+                    onClick={() => handleRemoveItem(item)}
+                  >
+                    -
+                  </button>
+                  <span className="px-2 py-1 bg-black text-white">
+                    {itemQuantities[item.card.info.id] || 0}
+                  </span>
+                  <button
+                    className="px-2 py-1 rounded-lg mx-1 bg-black text-white "
+                    onClick={() => handleAddItem(item)}
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                <button
+                  className="px-2 py-1 rounded-lg mx-12 bg-black text-white "
+                  onClick={() => handleAddItem(item)}
+                >
+                  Add +
+                </button>
+              )}
             </div>
             <img src={CDN_URL + item.card.info.imageId} />
           </div>

@@ -10,6 +10,8 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./component/Cart";
+import Search from "./component/Search";
+import Footer from "./component/Footer";
 
 // Chunking
 // lazy loading
@@ -37,6 +39,7 @@ const AppLayout = () => {
         <div className="app">
           <Header />
           <Outlet />
+          <Footer />
         </div>
       </UserContext.Provider>
     </Provider>
@@ -63,6 +66,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
       },
       {
         path: "/grocery",
